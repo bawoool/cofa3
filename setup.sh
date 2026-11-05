@@ -39,7 +39,22 @@ for f in NOTES.md WORKLOG.md; do
   if [ -f "$f" ]; then echo "[skip] $f (이미 있음)"; else cp "$H/templates/$f" "$f"; echo "[copy] $f"; fi
 done
 
-# 5) 첫 커밋: 커밋이 하나도 없을 때만 (과제 원본 + 준비 파일)
+# 5) 디자인 지침(Anthropic 공개 스킬 frontend-design)을 scratch/에 받기. 실패해도 계속 진행
+if [ -f scratch/frontend-design/SKILL.md ]; then
+  echo "[skip] scratch/frontend-design (이미 있음)"
+else
+  tmp=$(mktemp -d)
+  if timeout 60 git clone -q --depth 1 --filter=blob:none --sparse https://github.com/anthropics/skills.git "$tmp/s" 2>/dev/null \
+     && git -C "$tmp/s" sparse-checkout set skills/frontend-design 2>/dev/null \
+     && [ -f "$tmp/s/skills/frontend-design/SKILL.md" ]; then
+    mkdir -p scratch && cp -r "$tmp/s/skills/frontend-design" scratch/ && echo "[ok] scratch/frontend-design (디자인 지침)"
+  else
+    echo "[주의] frontend-design 받기 실패. 디자인 지침 없이 진행하거나 DESIGN.md의 수동 명령 사용"
+  fi
+  rm -rf "$tmp"
+fi
+
+# 6) 첫 커밋: 커밋이 하나도 없을 때만 (과제 원본 + 준비 파일)
 if ! git rev-parse HEAD >/dev/null 2>&1; then
   git add -A
   git commit -q -m "[준비] 과제 원본과 작업 규칙·기록 틀 추가" && echo "[ok] 첫 커밋" && git show --stat --format='' HEAD | tail -n 15

@@ -12,6 +12,7 @@ AI 해커톤 2차 예선 재응시(Cofa-Probe)용 개인 작업 하네스. 직�
 | `templates/WORKLOG.md` | 기능마다 쌓이는 쉬운 말 보고 (한 일 / 확인하는 법 / 이유 / 안 된 것) |
 | `setup.sh` | 작업 폴더 준비: .gitignore, git 작성자, AGENTS·NOTES·WORKLOG 배치, 첫 커밋 |
 | `MCP.md` | Playwright MCP 설정 메모 (사람용) |
+| `DESIGN.md` | 디자인 다듬기 메모 (frontend-design, 선택, 사람용) |
 | `check.sh` | 점검: 커밋, 테스트 실제 실행, 비밀값, 서버 바인딩, 과제 원본 변경, 제출물 구성 |
 
 ## 사용 (과제 README가 있는 폴더에서, 시작 직후)
