@@ -53,6 +53,7 @@ cat <<'EOF'
   1. 실행 중인 Codex가 있으면 /quit 후 다시 codex 실행 (AGENTS.md 반영)
   2. 업데이트 창이 뜨면 "Skip until next version"
   3. /status 의 Agents.md 줄에 두 파일이 보이는지 확인
-  4. Codex에 "분석" → 에디터에서 TASK_BRIEF.md 읽기
-  5. 에디터에 WORKLOG.md 열어 두기 (기능마다 보고가 쌓임)
+  4. Codex에 "분석" → TASK_BRIEF.md 읽기, INTERVIEW.md 질문을 담당자에게 하나씩 보내고 답변 칸에 붙여넣기
+  5. Codex에 "계획" → PLAN.md 보고 스택·순서 결정 → 첫 기능부터
+  6. 에디터에 WORKLOG.md 열어 두기 (기능마다 보고가 쌓임)
 EOF

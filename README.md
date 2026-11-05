@@ -18,4 +18,4 @@ AI 해커톤 2차 예선 재응시(Cofa-Probe)용 개인 작업 하네스. 직�
 git clone https://github.com/bawoool/cofa3.git ~/.harness && bash ~/.harness/setup.sh
 ```
 - 플랫폼 설정(`~/.codex` 등)은 건드리지 않는다. 과제가 준 AGENTS.md가 있으면 덮어쓰지 않고 뒤에 덧붙인다.
-- Codex 명령: 분석 / 상태 / 리뷰 / 보안 리뷰 / 체크 / 인계 / 이어서 / 제출 준비
+- Codex 명령: 분석 / 계획 / 상태 / 리뷰 / 보안 리뷰 / 체크 / 인계 / 이어서 / 제출 준비
